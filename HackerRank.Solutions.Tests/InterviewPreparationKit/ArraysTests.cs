@@ -79,4 +79,20 @@ public class ArraysTests
         var outputArray = Arrays.RotateLeft(inputArray, 13);
         outputArray.Should().Equal(new List<int>{87, 97, 33, 47, 70, 37, 8, 53, 13, 93, 71, 72, 51, 100, 60});
     }
+    
+    [Test]
+    public void RotateLeft_Should_ReturnSameArray_WhenZeroPassed()
+    {
+        var inputArray = new List<int> { 1, 2, 3, 4, 5 };
+        var outputArray = Arrays.RotateLeft(inputArray, 0);
+        outputArray.Should().Equal(inputArray);
+    }
+    
+    [Test]
+    public void RotateLeft_Should_ReturnSameArray_WhenNumberOfEntriesInArrayPassed()
+    {
+        var inputArray = new List<int> { 1, 2, 3, 4, 5 };
+        var outputArray = Arrays.RotateLeft(inputArray, inputArray.Count);
+        outputArray.Should().Equal(inputArray);
+    }
 }

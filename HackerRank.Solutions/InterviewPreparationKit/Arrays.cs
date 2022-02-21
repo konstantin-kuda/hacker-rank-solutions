@@ -40,18 +40,28 @@ public class Arrays
     }
     
     //https://www.hackerrank.com/challenges/ctci-array-left-rotation/problem
-    public static List<int> RotateLeft(List<int> a, int d)
+    public static List<int> RotateLeft(List<int> a, int k)
     {
-        var result = new List<int>();
-            
-        for (int i = d; i < a.Count; i++)
+        if (k == a.Count || k == 0)
         {
-            result.Add(a[i]);
+            return a;
         }
 
-        for (int i = 0; i < d; i++)
+        var n = a.Count;
+        var result = new List<int>();
+
+        if (k > n)
         {
-            result.Add(a[i]);
+            k = n % k;
+        }
+
+        for (var i = 0; i < n; i++)
+        {
+            result.Add(
+                i + k < n 
+                    ? a[i + k] 
+                    : a[i + k - n]
+            );
         }
 
         return result;
