@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerRank.Solutions.ConsoleApp", "HackerRank.Solutions.ConsoleApp\HackerRank.Solutions.ConsoleApp.csproj", "{90EFCE19-8DFF-4B76-8154-1B04471F0252}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerRank.Solutions", "HackerRank.Solutions\HackerRank.Solutions.csproj", "{8E3F1A19-17E9-49A0-80F1-0D8AF3D50D8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerRank.Solutions.Tests", "HackerRank.Solutions.Tests\HackerRank.Solutions.Tests.csproj", "{39FD6389-AE25-456A-A3EE-C230A06F3C5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{90EFCE19-8DFF-4B76-8154-1B04471F0252}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90EFCE19-8DFF-4B76-8154-1B04471F0252}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90EFCE19-8DFF-4B76-8154-1B04471F0252}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E3F1A19-17E9-49A0-80F1-0D8AF3D50D8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E3F1A19-17E9-49A0-80F1-0D8AF3D50D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E3F1A19-17E9-49A0-80F1-0D8AF3D50D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E3F1A19-17E9-49A0-80F1-0D8AF3D50D8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39FD6389-AE25-456A-A3EE-C230A06F3C5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39FD6389-AE25-456A-A3EE-C230A06F3C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39FD6389-AE25-456A-A3EE-C230A06F3C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39FD6389-AE25-456A-A3EE-C230A06F3C5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
