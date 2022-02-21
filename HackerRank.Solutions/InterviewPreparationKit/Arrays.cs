@@ -40,9 +40,9 @@ public class Arrays
     }
     
     //https://www.hackerrank.com/challenges/ctci-array-left-rotation/problem
-    public static List<int> RotateLeft(List<int> a, int k)
+    public static List<int> RotateLeft(List<int> a, int d)
     {
-        if (k == a.Count || k == 0)
+        if (d == a.Count || d == 0)
         {
             return a;
         }
@@ -50,20 +50,46 @@ public class Arrays
         var n = a.Count;
         var result = new List<int>();
 
-        if (k > n)
+        if (d > n)
         {
-            k = n % k;
+            d = n % d;
         }
 
         for (var i = 0; i < n; i++)
         {
             result.Add(
-                i + k < n 
-                    ? a[i + k] 
-                    : a[i + k - n]
+                i + d < n
+                    ? a[i + d] 
+                    : a[i + d - n]
             );
         }
 
+        return result;
+    }
+    
+    //https://www.hackerrank.com/challenges/new-year-chaos/problem
+    public static int MinimumBribes(List<int> q)
+    {
+        var result = 0;
+        for (var i = q.Count - 1; i >= 0; i--) 
+        {
+            var realValue = q[i];
+            var expectedValue = i + 1;
+            
+            if (realValue - expectedValue > 2) 
+            {
+                return - 1;
+            }
+
+            var max = new[] { 0, realValue - 2 }.Max();
+            for (var j = max; j < i; j++)
+            {
+                if (q[j] > realValue)
+                {
+                    result++;
+                }
+            }
+        }
         return result;
     }
 }

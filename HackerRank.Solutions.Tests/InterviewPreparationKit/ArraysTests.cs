@@ -95,4 +95,29 @@ public class ArraysTests
         var outputArray = Arrays.RotateLeft(inputArray, inputArray.Count);
         outputArray.Should().Equal(inputArray);
     }
+    
+    [Test]
+    public void MinimumBribes_Should_ReturnProperValue1()
+    {
+        var inputArray = new List<int> { 2, 1, 5, 3, 4};
+        var outputArray = Arrays.MinimumBribes(inputArray);
+        outputArray.Should().Be(3);
+    }
+    
+    [Test]
+    public void MinimumBribes_Should_ReturnProperValue2()
+    {
+        var inputArray = new List<int> { 2, 5, 1, 3, 4};
+        var outputArray = Arrays.MinimumBribes(inputArray);
+        outputArray.Should().Be(-1);
+    }
+    
+    [Test]
+    public void MinimumBribes_Should_ReturnProperValue3()
+    {
+        var inputArray = new List<int> { 1, 2, 5, 3, 7, 8, 6, 4};
+        
+        var outputArray = Arrays.MinimumBribes(inputArray);
+        outputArray.Should().Be(7);
+    }
 }
