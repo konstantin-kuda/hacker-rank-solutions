@@ -21,6 +21,7 @@ public class Arrays
             {
                 var previousRow = arr[rowIndex - 1];
                 var nextRow = arr[rowIndex + 1];
+                
                 var count = previousRow[columnIndex - 1] + previousRow[columnIndex] + previousRow[columnIndex + 1] +
                             arr[rowIndex][columnIndex] +
                             nextRow[columnIndex - 1] + nextRow[columnIndex] + nextRow[columnIndex + 1];
@@ -36,5 +37,23 @@ public class Arrays
             }
         }
         return max;
+    }
+    
+    //https://www.hackerrank.com/challenges/ctci-array-left-rotation/problem
+    public static List<int> RotateLeft(List<int> a, int d)
+    {
+        var result = new List<int>();
+            
+        for (int i = d; i < a.Count; i++)
+        {
+            result.Add(a[i]);
+        }
+
+        for (int i = 0; i < d; i++)
+        {
+            result.Add(a[i]);
+        }
+
+        return result;
     }
 }

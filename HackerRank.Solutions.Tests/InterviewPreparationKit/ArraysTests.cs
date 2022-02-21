@@ -55,4 +55,28 @@ public class ArraysTests
         var result = Arrays.HourglassSum(input);
         result.Should().Be(-19);
     }
+
+    [Test]
+    public void RotateLeft_Should_ReturnProperValue_1()
+    {
+        var inputArray = new List<int> { 1, 2, 3, 4, 5 };
+        var outputArray = Arrays.RotateLeft(inputArray, 4);
+        outputArray.Should().Equal(new List<int>{5, 1, 2, 3, 4});
+    }
+
+    [Test]
+    public void RotateLeft_Should_ReturnProperValue_2()
+    {
+        var inputArray = new List<int> { 41, 73, 89, 7, 10, 1, 59, 58, 84, 77, 77, 97, 58, 1, 86, 58, 26, 10, 86, 51};
+        var outputArray = Arrays.RotateLeft(inputArray, 10);
+        outputArray.Should().Equal(new List<int>{77, 97, 58, 1, 86, 58, 26, 10, 86, 51, 41, 73, 89, 7, 10, 1, 59, 58, 84, 77});
+    }
+    
+    [Test]
+    public void RotateLeft_Should_ReturnProperValue_3()
+    {
+        var inputArray = new List<int> { 33, 47, 70, 37, 8, 53, 13, 93, 71, 72, 51, 100, 60, 87, 97};
+        var outputArray = Arrays.RotateLeft(inputArray, 13);
+        outputArray.Should().Equal(new List<int>{87, 97, 33, 47, 70, 37, 8, 53, 13, 93, 71, 72, 51, 100, 60});
+    }
 }
