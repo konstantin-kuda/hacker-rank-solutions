@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using FluentAssertions;
-using HackerRank.Solutions.InterviewPreparationKit;
-using NUnit.Framework;
-
-namespace HackerRank.Solutions.Tests.InterviewPreparationKit;
+﻿namespace HackerRank.Solutions.Tests.InterviewPreparationKit;
 
 [TestFixture]
 public class ArraysTests
