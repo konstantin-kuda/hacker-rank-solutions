@@ -74,6 +74,7 @@ public class Arrays
         for (var i = q.Count - 1; i >= 0; i--) 
         {
             var realValue = q[i];
+            
             var expectedValue = i + 1;
             
             if (realValue - expectedValue > 2) 
