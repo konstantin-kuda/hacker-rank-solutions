@@ -95,24 +95,47 @@ public class ArraysTests
     public void MinimumBribes_Should_ReturnProperValue1()
     {
         var inputArray = new List<int> { 2, 1, 5, 3, 4};
-        var outputArray = Arrays.MinimumBribes(inputArray);
-        outputArray.Should().Be(3);
+        var result = Arrays.MinimumBribes(inputArray);
+        result.Should().Be(3);
     }
     
     [Test]
     public void MinimumBribes_Should_ReturnProperValue2()
     {
         var inputArray = new List<int> { 2, 5, 1, 3, 4};
-        var outputArray = Arrays.MinimumBribes(inputArray);
-        outputArray.Should().Be(-1);
+        var result = Arrays.MinimumBribes(inputArray);
+        result.Should().Be(-1);
     }
     
     [Test]
     public void MinimumBribes_Should_ReturnProperValue3()
     {
         var inputArray = new List<int> { 1, 2, 5, 3, 7, 8, 6, 4};
-        
-        var outputArray = Arrays.MinimumBribes(inputArray);
-        outputArray.Should().Be(7);
+        var result = Arrays.MinimumBribes(inputArray);
+        result.Should().Be(7);
+    }
+    
+    [Test]
+    public void MinimumBribes_Should_ReturnProperValue4()
+    {
+        var inputArray = new List<int> { 1, 2, 5, 3, 4, 7, 8, 6};
+        var result = Arrays.MinimumBribes(inputArray);
+        result.Should().Be(4);
+    }
+
+    [Test]
+    public void MinimumBribes_Should_ReturnProperValue5()
+    {
+        var inputArray = new List<int> { 1, 2, 5, 3, 7, 8, 6, 4};
+        var result = Arrays.MinimumBribes(inputArray);
+        result.Should().Be(7);
+    }
+
+    [Test]
+    public void MinimumBribes_Should_ReturnWrongValue1()
+    {
+        var inputArray = new List<int> { 5, 1, 2, 3, 7, 8, 6, 4};
+        var result = Arrays.MinimumBribes(inputArray);
+        result.Should().Be(-1);
     }
 }

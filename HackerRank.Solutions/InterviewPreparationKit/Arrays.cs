@@ -73,19 +73,16 @@ public class Arrays
         var result = 0;
         for (var i = q.Count - 1; i >= 0; i--) 
         {
-            var realValue = q[i];
-            
-            var expectedValue = i + 1;
-            
-            if (realValue - expectedValue > 2) 
+            if (q[i] - (i + 1) > 2) 
             {
-                return - 1;
+                return -1;
             }
 
-            var max = new[] { 0, realValue - 2 }.Max();
+            var max = new[] { 0, q[i] - 2 }.Max();
+            
             for (var j = max; j < i; j++)
             {
-                if (q[j] > realValue)
+                if (q[j] > q[i])
                 {
                     result++;
                 }
