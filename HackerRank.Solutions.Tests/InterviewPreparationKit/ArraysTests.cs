@@ -1,4 +1,6 @@
-﻿namespace HackerRank.Solutions.Tests.InterviewPreparationKit;
+﻿using System.Linq;
+
+namespace HackerRank.Solutions.Tests.InterviewPreparationKit;
 
 [TestFixture]
 public class ArraysTests
@@ -91,51 +93,32 @@ public class ArraysTests
         outputArray.Should().Equal(inputArray);
     }
     
-    [Test]
-    public void MinimumBribes_Should_ReturnProperValue1()
+    [TestCase("2,1,5,3,4", 3)]
+    [TestCase("2,5,1,3,4", -1)]
+    [TestCase("1,2,5,3,7,8,6,4", 7)]
+    [TestCase("1,2,5,3,4,7,8,6", 4)]
+    [TestCase("1,2,5,3,7,8,6,4", 7)]
+    [TestCase("5,1,2,3,7,8,6,4", -1)]
+    public void MinimumBribes_ShouldMatch(string arrayString, int expectedResult)
     {
-        var inputArray = new List<int> { 2, 1, 5, 3, 4};
+        var inputArray = arrayString.Split(new[] { ',' }).Select(int.Parse).ToList();
         var result = Arrays.MinimumBribes(inputArray);
-        result.Should().Be(3);
-    }
-    
-    [Test]
-    public void MinimumBribes_Should_ReturnProperValue2()
-    {
-        var inputArray = new List<int> { 2, 5, 1, 3, 4};
-        var result = Arrays.MinimumBribes(inputArray);
-        result.Should().Be(-1);
-    }
-    
-    [Test]
-    public void MinimumBribes_Should_ReturnProperValue3()
-    {
-        var inputArray = new List<int> { 1, 2, 5, 3, 7, 8, 6, 4};
-        var result = Arrays.MinimumBribes(inputArray);
-        result.Should().Be(7);
-    }
-    
-    [Test]
-    public void MinimumBribes_Should_ReturnProperValue4()
-    {
-        var inputArray = new List<int> { 1, 2, 5, 3, 4, 7, 8, 6};
-        var result = Arrays.MinimumBribes(inputArray);
-        result.Should().Be(4);
+        result.Should().Be(expectedResult);
     }
 
-    [Test]
-    public void MinimumBribes_Should_ReturnProperValue5()
+    [TestCase("4,3,1,2", 3)]
+    [TestCase("2,3,4,1,5", 3)]
+    [TestCase("1,3,5,2,4,6,7", 3)]
+    public void MinimumSwaps_ShouldMatch(string arrayString, int expectedResult)
     {
-        var inputArray = new List<int> { 1, 2, 5, 3, 7, 8, 6, 4};
-        var result = Arrays.MinimumBribes(inputArray);
-        result.Should().Be(7);
-    }
-
-    [Test]
-    public void MinimumBribes_Should_ReturnWrongValue1()
-    {
-        var inputArray = new List<int> { 5, 1, 2, 3, 7, 8, 6, 4};
-        var result = Arrays.MinimumBribes(inputArray);
-        result.Should().Be(-1);
+        var result1 = Arrays.MinimumSwaps(
+            arrayString.Split(new[] { ',' }).Select(int.Parse).ToArray()    
+        );
+        result1.Should().Be(expectedResult);
+        
+        var result2 = Arrays.MinimumSwaps2(
+            arrayString.Split(new[] { ',' }).Select(int.Parse).ToArray()
+        );
+        result2.Should().Be(expectedResult);
     }
 }

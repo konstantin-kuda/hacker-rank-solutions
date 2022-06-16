@@ -90,4 +90,82 @@ public class Arrays
         }
         return result;
     }
+    
+    //https://www.hackerrank.com/challenges/minimum-swaps-2/problem
+    public static int MinimumSwaps(int[] arr)
+    {
+        void PrintArray()
+        {
+            Debug.WriteLine(
+                string.Join(",", arr.Select(x => x.ToString()))
+            );
+        }
+
+        PrintArray();
+        
+        var result = 0;
+        for (var i = 0; i < arr.Length; i++)
+        {
+            var expectedValue = i + 1;
+            var currentValue = arr[i];
+
+            if (currentValue != expectedValue)
+            {
+                var found = false;
+                for (var j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[j] == expectedValue)
+                    {
+                        found = true;
+                        result++;
+                        arr[i] = expectedValue;
+                        arr[j] = currentValue;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    throw new Exception($"{expectedValue} could not be found: pointer {i + 1}");
+                }
+                PrintArray();
+            }
+        }
+
+        return result;
+    }
+    
+    //https://www.hackerrank.com/challenges/minimum-swaps-2/problem
+    public static int MinimumSwaps2(int[] arr)
+    {
+        void PrintArray()
+        {
+            Debug.WriteLine(
+                string.Join(",", arr.Select(x => x.ToString()))
+            );
+        }
+
+        PrintArray();
+
+        var a = 0;
+        var dict = arr.ToDictionary(x => x, x => a++);
+        
+        var result = 0;
+        for (var i = 0; i < arr.Length; i++)
+        {
+            var expectedValue = i + 1;
+            var currentValue = arr[i];
+
+            if (currentValue != expectedValue)
+            {
+                var positionOfExpectedValue = dict[expectedValue];
+                dict[currentValue] = positionOfExpectedValue;
+                arr[positionOfExpectedValue] = currentValue;
+
+                result++;
+                PrintArray();
+            }
+        }
+
+        return result;
+    }
 }
